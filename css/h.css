@@ -1,0 +1,10 @@
+.box {
+  background-color: pink;
+  height: 400px;
+  width: 400px;
+  text-align: center;
+  padding: 50px;
+}
+.box h3 {
+  color: red;
+}

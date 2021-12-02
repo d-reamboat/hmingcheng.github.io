@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>数据可视化</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎你</title>
     <link rel="stylesheet" href="css/index.css">
 
 
 
 </head>
+
 <body>
 
-<header>
-    <h1>何明成的可视面板</h1>
-    <div class="showTime">
-        <script>
-            var t = null;
-            t = setTimeout(time, 1000);//開始运行
-            function time() {
-                clearTimeout(t);//清除定时器
-                dt = new Date();
-                var y = dt.getFullYear();
-                var mt = dt.getMonth() + 1;
-                var day = dt.getDate();
-                var h = dt.getHours();//获取时
-                var m = dt.getMinutes();//获取分
-                var s = dt.getSeconds();//获取秒
-                document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
-                t = setTimeout(time, 1000); //设定定时器，循环运行
-            }
-        </script>
-    </div>
-</header>
-<div class="father">
-    <div class="son">
-        <div class="girl bar">
-            <h2>竞争形势</h2>
-            <div class="career"></div>
+    <header>
+        <h1>容貌焦虑</h1>
+        <div class="showTime">
+            <script>
+                var t = null;
+                t = setTimeout(time, 1000);//開始运行
+                function time() {
+                    clearTimeout(t);//清除定时器
+                    dt = new Date();
+                    var y = dt.getFullYear();
+                    var mt = dt.getMonth() + 1;
+                    var day = dt.getDate();
+                    var h = dt.getHours();//获取时
+                    var m = dt.getMinutes();//获取分
+                    var s = dt.getSeconds();//获取秒
+                    document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+                    t = setTimeout(time, 1000); //设定定时器，循环运行
+                }
+            </script>
         </div>
-        <div class="girl line">
-            <h2>应届毕业</h2>
-            <div class="career"></div>
-        </div>
-        <div class="girl left3">
-            <h2>就业人数</h2>
-            <div class="career"></div>
-        </div>
-<!--        <div class="girl"></div>-->
-<!--        <div class="girl"></div>-->
-    </div>
-<!--    第二个盒子-->
-    <div class="son">
-        <div class="lower">
-<!--            数字-->
-            <div class="top">
-                <ul>
-                    <li>123455</li>
-                    <li>123456</li>
-                </ul>
+    </header>
+    <div class="father">
+        <div class="son">
+            <div class="girl bar">
+                <h2>竞争形势</h2>
+                <div class="career"></div>
             </div>
-            <div class="no">
-                <ul>
-                    <li>前端需求人数</li>
-                    <li>市场供应人数</li>
-                </ul>
+            <div class="girl line">
+                <h2>应届毕业</h2>
+                <div class="career"></div>
+            </div>
+            <div class="girl left3">
+                <h2>就业人数</h2>
+                <div class="career"></div>
+            </div>
+            <!--        <div class="girl"></div>-->
+            <!--        <div class="girl"></div>-->
+        </div>
+        <!--    第二个盒子-->
+        <div class="son">
+            <div class="lower">
+                <!--            数字-->
+                <div class="top">
+                    <ul>
+                        <li>123455</li>
+                        <li>123456</li>
+                    </ul>
+                </div>
+                <div class="no">
+                    <ul>
+                        <li>前端需求人数</li>
+                        <li>市场供应人数</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map">
+                <div class="hi1"></div>
+                <div class="hi2"></div>
+                <div class="hi3"></div>
+                <!--            地图模块-->
+                <div class="hi4"></div>
             </div>
         </div>
-        <div class="map">
-            <div class="hi1"></div>
-            <div class="hi2"></div>
-            <div class="hi3"></div>
-<!--            地图模块-->
-            <div class="hi4"></div>
+        <div class="son">
+            <div class="girl one">
+                <h2>就业行业</h2>
+                <div class="career"></div>
+            </div>
+            <div class="girl two">
+                <h2>行业发展</h2>
+                <div class="career"></div>
+            </div>
+            <div class="girl first">
+                <h2>top行业</h2>
+                <div class="career"></div>
+            </div>
         </div>
-    </div>
-    <div class="son">
-        <div class="girl one">
-            <h2>就业行业</h2>
-            <div class="career"></div>
-        </div>
-        <div class="girl two">
-            <h2>行业发展</h2>
-            <div class="career"></div>
-        </div>
-        <div class="girl first">
-            <h2>top行业</h2>
-            <div class="career"></div>
-        </div>
-    </div>
 
-</div>
-<!--window.addEventListener("resize", function() {-->
-<!--myChart.resize();-->
-<!--});-->
-<script src="js/echarts.js"></script>
-<script src="js/china.js"></script>
-<script src="js/index.js"></script>
+    </div>
+    <!--window.addEventListener("resize", function() {-->
+    <!--myChart.resize();-->
+    <!--});-->
+    <script src="js/echarts.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
+
 </html>
