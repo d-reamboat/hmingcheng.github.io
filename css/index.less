@@ -4,6 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+// html,body {
+//     overflow: scroll;min-height: 101%;
+// }
+// html {
+//     overflow: -moz-scrollbars-vertical;
+// }
 li {
     list-style: none;
     flex: 1;
@@ -59,10 +65,66 @@ header {
     .middle {
     flex: 5;
     margin: 0 10px 15px ;
+    // 因为中间动画旋转过程中会撑大盒子，给父元素加上即可
+    overflow: hidden;
 }
     .right {
     flex: 3;
 }
+}
+.panel {
+  position: relative;
+  height: 3.875rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background: url(../images/line\(1\).png);
+  padding: 0 0.1875rem 0.5rem;
+  margin-bottom: 0.1875rem;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #02a6b5;
+    border-left: 2px solid #02a6b5;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #02a6b5;
+    border-right: 2px solid #02a6b5;
+  }
+  .panel-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid #02a6b5;
+      border-left: 2px solid #02a6b5;
+    }
+    &::after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid #02a6b5;
+      border-right: 2px solid #02a6b5;
+    }
+  }
 }
 .girl {
     height: 310px;
@@ -118,18 +180,18 @@ ul {
     position: relative;
     height: 810px;
     /*background-color: #fff;*/
+    .blue {
+        line-height: 810px;
+        color: rgba(255, 94, 94, 0.5);
+    text-align: center;
+    font-family: electronicFont;
+    font-size: 100px;
+    font-style: italic;
+    
+
+    }
 }
-.hi1 {
-    width: 518px;
-    height: 518px;
-    background: url(../images/map.png);
-    background-size: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    opacity: 0.3;
-}
+
 .hi2 {
     position: absolute;
     top: 50%;
@@ -137,10 +199,11 @@ ul {
     transform: translate(-50%,-50%);
     width: 643px;
     height: 643px;
-    background: url(../images/lbx.png);
+    background: url(../images/lbx.png) no-repeat;
     background-size: 100%;
     animation: rotate 15s linear infinite;
     opacity: .6;
+    overflow: hidden;
 }
 .hi3 {
     position: absolute;
@@ -149,11 +212,12 @@ ul {
     transform: translate(-50%,-50%);
     width: 566px;
     height: 566px;
-    background: url(../images/lbx.png);
+    background: url(../images/lbx.png) no-repeat;
     background-size: 100%;
     animation: rotate1 15s linear infinite;
-    opacity: .6
-
+    opacity: .6;
+    overflow: hidden;
+    
 }
 .hi4 {
     position: absolute;
