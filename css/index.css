@@ -148,20 +148,20 @@ h2 {
 ul {
   display: flex;
 }
-.top li {
+.top {
   height: 80px;
-  font-size: 70px;
-  color: #ffeb7b;
+  font-size: 30px;
+  color: rgba(172, 246, 255);
   text-align: center;
-  font-family: electronicFont;
+  font-style: italic;
 }
-.top li video {
+.no li video {
   width: 10px;
   height: 10px;
 }
 .no li {
   height: 40px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 248, 110, 0.8);
   font-size: 18px;
   padding: 10px 0 0;
   text-align: center;

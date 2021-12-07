@@ -39,7 +39,7 @@
         xAxis: {
             type: "category",
             boundaryGap: true,
-            data: ["白庄镇", "南桥镇", '四团镇', '青村镇', '柘林镇'],
+            data: ["几乎每天", "大部分时间", '偶尔会', '几乎不会', '完全不会'],
             axisLabel: {
                 //坐标轴刻度标签的相关设置。
                 interval: 0, //设置为 1，表示『隔一个标签显示一个标签』
@@ -95,46 +95,10 @@
         ],
         series: [
             {
-                name: '1月',
+                // name: '2月',
                 type: "pictorialBar",
                 barWidth: "60%",
-                stack: "总量",
-                label: {
-                    normal: {
-                        show: false
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: {
-                            type: "linear",
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [
-                                {
-                                    offset: 0,
-                                    color: "rgba(0, 151, 251, 1)" // 0% 处的颜色
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(0, 34, 66, 0.2)" // 100% 处的颜色
-                                }
-                            ],
-
-                        } //渐变颜色
-                    }
-                },
-                symbol:
-                    "path://M12.000,-0.000 C12.000,-0.000 16.074,60.121 22.731,60.121 C26.173,60.121 -3.234,60.121 0.511,60.121 C7.072,60.121 12.000,-0.000 12.000,-0.000 Z",
-
-                data: [23, 84, 101, 74, 87]
-            }, {
-                name: '2月',
-                type: "pictorialBar",
-                barWidth: "60%",
-                stack: "总量",
+                // stack: "总量",
                 label: {
                     normal: {
                         show: false
@@ -155,7 +119,7 @@
                                 },
                                 {
                                     offset: 1,
-                                    color: "rgba(0, 34, 66, 0.2)" // 100% 处的颜色
+                                    color: "rgba(0, 34, 66, 0.4)" // 100% 处的颜色
                                 }
                             ],
 
@@ -165,7 +129,7 @@
                 symbol:
                     "path://M12.000,-0.000 C12.000,-0.000 16.074,60.121 22.731,60.121 C26.173,60.121 -3.234,60.121 0.511,60.121 C7.072,60.121 12.000,-0.000 12.000,-0.000 Z",
 
-                data: [13, 54, 71, 24, 57]
+                data: [13, 14, 53, 26, 22]
             }],
     };
 
@@ -247,7 +211,7 @@
                     color: '#fff',
                 }
             },
-            data: ['one', 'two', 'three', 'four', 'five']
+            data: ['从未', '不多', '一般', '较多', '经常']
         }
 
         ],
@@ -318,7 +282,7 @@
             },
             barGap: '0%',
             barCategoryGap: '50%',
-            data: [60, 132, 89, 134, 60]
+            data: [26, 44, 53, 21, 11]
         }
 
         ]
@@ -503,19 +467,22 @@
             data: [
 
                 {
-                    value: 15,
+                    value: 13,
+                    name: '2分'
+                },
+                {
+                    value: 24,
                     name: '4分'
                 },
                 {
-                    value: 25,
+                    value: 65,
                     name: '6分'
                 },
                 {
-                    value: 20,
+                    value: 23,
                     name: '8分'
-                },
-                {
-                    value: 35,
+                }, {
+                    value: 28,
                     name: '10分'
                 }
             ]
@@ -532,11 +499,11 @@
     var myChart = echarts.init(document.querySelector(".right1 .career"));
     const res = [{
         "label": "男",
-        "value": 37
+        "value": 75
     },
     {
         "label": "女",
-        "value": 260
+        "value": 82
     }
     ]
 
@@ -557,7 +524,7 @@
                     borderWidth: 5,
                     shadowBlur: 20,
                     borderColor: color[i],
-                    shadowColor: color[i]
+                    // shadowColor: color[i]
                 }
             }
         }, {
@@ -587,8 +554,8 @@
                 z: 3,
                 style: {
                     image: border,
-                    width: 50,
-                    height: 50
+                    width: 300,
+                    height: 300
                 },
                 left: 'center',
                 top: 'center',
@@ -602,7 +569,7 @@
                     width: 85,
                     height: 120
                 },
-                left: '10%',
+                left: '22%',
                 top: 'center'
             },
             {
@@ -613,7 +580,7 @@
                     width: 85,
                     height: 120
                 },
-                right: '10%',
+                right: '22%',
                 top: 'center'
             }
             ]
@@ -621,20 +588,17 @@
         tooltip: {
             show: false
         },
-        toolbox: {
-            show: false
-        },
         series: [{
             name: '',
             type: 'pie',
             clockWise: false,
-            radius: [140, 140],
+            radius: [105, 115],
             hoverAnimation: false,
             itemStyle: {
                 normal: {
                     label: {
                         show: true,
-                        fontSize: 16,
+                        fontSize: 15,
                         formatter(params) {
                             return params.name ?
                                 params.name + '\n' + params.value + '人' :
@@ -643,8 +607,8 @@
                     },
                     labelLine: {
                         width: 4,
-                        length: 8,
-                        length2: 8,
+                        length: 5,
+                        length2: 5,
                         show: true,
                         color: '#00ffff'
                     }
@@ -662,164 +626,244 @@
     // 1实例化对象
     var myChart = echarts.init(document.querySelector(".right2 .career"));
     // 2. 指定配置项和数据
-    var colors = [
-        "#00ADD0",
-        "#FFA12F",
-        "#B62AFF",
-        "#604BFF",
-        "#6E35FF",
-        "#002AFF",
-        "#20C0F4",
-        "#95F300",
-        "#04FDB8",
-        "#AF5AFF"
-    ]
-    var getaway = function getData() {
-        let data = {
-            name: "根节点1",
-            value: 0,
-            children: []
-        };
-        for (let i = 1; i <= 5; i++) {
-            let obj = {
-                name: "" + i,
-                value: i,
-                children: [],
-            };
-            for (let j = 1; j <= 3; j++) {
-                let obj2 = {
-                    name: `1-${i}-${j}`,
-                    value: 1 + "-" + i + "-" + j,
-                };
-                if (j % 2 == 1) {
-                    obj2.children = []
-                    for (let k = 1; k <= 3; k++) {
-                        let obj3 = {
-                            name: `1-${i}-${j}-${k}`,
-                            value: 1 + "-" + i + "-" + j + '-' + k,
-                        };
-                        obj2.children.push(obj3);
+    myChart.on('click', function (params) {
+        console.log(params.name);
+        // window.open(params.data.url);
+        // window.open('video,' + encodeURIComponent(params.value));
+    });
+
+    var colorList = [[
+        '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed',
+        '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0',
+        '#1e90ff', '#ff6347', '#7b68ee', '#d0648a', '#ffd700',
+        '#6b8e23', '#4ea397', '#3cb371', '#b8860b', '#7bd9a5'
+    ],
+    [
+        '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed',
+        '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0',
+        '#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700',
+        '#6b8e23', '#ff00ff', '#3cb371', '#b8860b', '#30e0e0'
+    ],
+    [
+        '#929fff', '#9de0ff', '#ffa897', '#af87fe', '#7dc3fe',
+        '#bb60b2', '#433e7c', '#f47a75', '#009db2', '#024b51',
+        '#0780cf', '#765005', '#e75840', '#26ccd8', '#3685fe',
+        '#9977ef', '#f5616f', '#f7b13f', '#f9e264', '#50c48f'
+    ]][2];
+
+    option = {
+        // 图表标题
+        // title: {
+        //     show: true,//显示策略，默认值true,可选为：true（显示） | false（隐藏）
+        //     text: '"新时代"主题图谱',//主标题文本，'\n'指定换行
+        //     x: 'center',        // 水平安放位置，默认为左对齐，可选为：
+        //     // 'center' ¦ 'left' ¦ 'right'
+        //     // ¦ {number}（x坐标，单位px）
+        //     y: 'bottom',             // 垂直安放位置，默认为全图顶端，可选为：
+        //     // 'top' ¦ 'bottom' ¦ 'center'
+        //     // ¦ {number}（y坐标，单位px）
+        //     //textAlign: null          // 水平对齐方式，默认根据x设置自动调整
+        //     // backgroundColor: 'rgba(0,0,0,0)',
+        //     // borderColor: '#ccc',    // 标题边框颜色
+        //     borderWidth: 0,         // 标题边框线宽，单位px，默认为0（无边框）
+        //     padding: 5,             // 标题内边距，单位px，默认各方向内边距为5，
+        //     // 接受数组分别设定上右下左边距，同css
+        //     itemGap: 10,            // 主副标题纵向间隔，单位px，默认为10，
+        //     textStyle: {
+        //         fontSize: 18,
+        //         fontWeight: 'bolder',
+        //         color: '#333'        // 主标题文字颜色
+        //     },
+        //     subtextStyle: {
+        //         color: '#aaa'        // 副标题文字颜色
+        //     }
+        // },
+        // backgroundColor: '#fff',
+        tooltip: {},
+        animationDurationUpdate: function (idx) {
+            // 越往后的数据延迟越大
+            return idx * 100;
+        },
+        animationEasingUpdate: 'bounceIn',
+        color: ['#fff', '#fff', '#fff'],
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            force: {
+                repulsion: 500,
+                edgeLength: 10
+            },
+            roam: true,
+            label: {
+                normal: {
+                    show: true
+                }
+            },
+            data: [{
+                "name": "自卑",
+                // "value": 2373,
+                "symbolSize": 145,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[0],
+                        "color": colorList[0]
                     }
                 }
-
-                obj.children.push(obj2);
-            }
-
-            data.children.push(obj);
-        }
-        let arr = []
-        arr.push(data)
-        // 
-        arr = handle(arr, 0)
-        console.log(arr);
-        return arr;
-    }
-    var handle = function handleData(data, index, color = '#00f6ff') {
-        //index标识第几层
-        return data.map((item, index2) => {
-            //计算出颜色
-            if (index == 1) {
-                color = colors.find((item, eq) => eq == index2 % 10);
-            }
-            // 设置节点大小
-            if (index === 0 || index === 1) {
-                item.label = {
-                    position: "inside",
-                    //   rotate: 0,
-                    //   borderRadius: "50%",
+            }, {
+                "name": "尴尬",
+                // "value": 10777000,
+                "symbolSize": 130,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[17],
+                        "color": colorList[17]
+                    }
                 }
-            }
-            // 设置label大小
-            switch (index) {
-                case 0:
-                    item.symbolSize = 70
-                    break;
-                case 1:
-                    item.symbolSize = 50
-                    break;
-                default:
-                    item.symbolSize = 10
-                    break;
-            }
-            // 设置线条颜色
-            item.lineStyle = { color: color }
-
-            if (item.children) {//存在子节点
-                item.itemStyle = {
-                    borderColor: color,
-                    color: color
-                };
-                item.children = handle(item.children, index + 1, color)
-            } else {//不存在
-                item.itemStyle = {
-                    color: 'transparent',
-                    borderColor: color
-                };
-            }
-            return item
-        })
-    }
-
-    var option = {
-        type: "tree",
-        // backgroundColor: "#000",
-        toolbox: { //工具栏
-            show: false,
-            iconStyle: {
-                borderColor: "#03ceda"
             },
-            feature: {
-                restore: {}
-            }
-        },
-        gird: {
-            top: "15%"
-        },
-        tooltip: {//提示框
-            trigger: "item",
-            triggerOn: "mousemove",
-            backgroundColor: "rgba(1,70,86,1)",
-            borderColor: "rgba(0,246,255,1)",
-            borderWidth: 0.5,
-            textStyle: {
-                fontSize: 10
-            }
-        },
-        series: [
             {
-                type: "tree",
-                hoverAnimation: true, //hover样式
-                data: getaway(),
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0,
-                layout: "radial",
-                symbol: "circle",
-                symbolSize: 10,
-                nodePadding: 20,
-                animationDurationUpdate: 750,
-                expandAndCollapse: true, //子树折叠和展开的交互，默认打开
-                initialTreeDepth: 2,
-                roam: true, //是否开启鼠标缩放和平移漫游。scale/move/true
-                focusNodeAdjacency: true,
-                itemStyle: {
-                    borderWidth: 1,
-                },
-                label: { //标签样式
-                    color: "#fff",
-                    fontSize: 10,
-                    fontFamily: "SourceHanSansCN",
-                    position: "inside",
-                    rotate: 0,
-                },
-                lineStyle: {
-                    width: 1,
-
+                "name": "嘲笑",
+                // "value": 8694000,
+                "symbolSize": 123,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[12],
+                        "color": colorList[12]
+                    }
                 }
-            }
-        ]
-    };
+            }, {
+                "name": "缺陷",
+                // "value": 2289,
+                "symbolSize": 67,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[2],
+                        "color": colorList[3]
+                    }
+                }
+            }, {
+                "name": "自闭",
+                // "value": 27000,
+                "symbolSize": 90,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[16],
+                        "color": colorList[16]
+                    }
+                }
+            }, {
+                "name": "痛苦",
+                // "value": 5449,
+                "symbolSize": 110,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[1],
+                        "color": colorList[1]
+                    }
+                }
+            }, {
+                "name": "焦虑",
+                // "value": 2289,
+                "symbolSize": 67,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[2],
+                        "color": colorList[2]
+                    }
+                }
+            }, {
+                "name": "抑郁",
+                // "value": 92000,
+                "symbolSize": 123,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[18],
+                        "color": colorList[18]
+                    }
+                }
+            }, {
+                "name": "抱怨",
+                // "value": 20000,
+                "symbolSize": 141,
+                "draggable": true,
+                "itemStyle": {
+                    "normal": {
+                        "shadowBlur": 100,
+                        // "shadowColor": colorList[19],
+                        "color": colorList[19]
+                    }
+                },
+                // "url": "video/"
+            }, {
+                name: '难过',
+                // value: 2058124,
+                symbolSize: 143,
+                draggable: true,
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        // shadowColor: colorList[1], 
+                        color: colorList[1]
+                    }
+                },
+            },
+            {
+                name: '摆脱',
+                // value: 1751491,
+                symbolSize: 132,
+                draggable: true,
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        // shadowColor: colorList[2], 
+                        color: colorList[2]
+                    }
+                },
+            },
+            {
+                name: '烦躁',
+                // value: 1642587,
+                symbolSize: 66,
+                draggable: true,
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        // shadowColor: colorList[3], 
+                        color: colorList[17]
+                    }
+                },
+            },
+            {
+                name: '折磨',
+                // value: 1524287,
+                symbolSize: 123,
+                draggable: true,
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        // shadowColor: colorList[4], 
+                        color: colorList[4]
+                    }
+                },
+            },
+            ]
+        }]
+    }
     // 把配置给实例对象
     myChart.setOption(option);
     window.addEventListener("resize", function () {
@@ -829,116 +873,148 @@
 (function () {
     // 1实例化对象
     var myChart = echarts.init(document.querySelector(".right3 .career"));
-    // 2. 指定配置项和数据
-    var fontColor = '#30eee9';
-    var xAxisData = [];
-    var data = [];
-    var data2 = [];
-    for (var i = 0; i < 50; i++) {
-        xAxisData.push(i);
-        data.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-        data2.push((Math.sin(i / 5) * (i / 5 + 10) + i / 6) * 3);
+    var scaleData = [
+        {
+            name: '商家贩卖焦虑',
+            value: 48,
+        },
+        {
+            name: '自身追求完美',
+            value: 109,
+        },
+        {
+            name: '美颜app的出现',
+            value: 27,
+        },
+        {
+            name: '周围人的评价',
+            value: 99,
+        },
+        {
+            name: '嫉妒心理',
+            value: 38,
+        },
+        {
+            name: '其他',
+            value: 19,
+        },
+    ];
+    // 随机颜色
+    var rich = {
+        white: {
+            color: '#ddd',
+            align: 'center',
+            padding: [3, 0],
+        },
+    };
+    var placeHolderStyle = {
+        normal: {
+            label: {
+                show: false,
+            },
+            labelLine: {
+                show: false,
+            },
+            color: 'rgba(0, 0, 0, 0)',
+            // borderColor: 'rgba(0, 0, 0, 0)',
+            borderWidth: 0,
+        },
+    };
+    function bg2() {
+        return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
     }
 
-    option = {
-        // backgroundColor: '#08263a',
-        grid: {
-            top: "3%",
-            left: "3%",
-            right: "3%",
-            bottom: "3%",
-            containLabel: true
-        },
-        xAxis: [{
-            show: false,
-            data: xAxisData
-        }, {
-            show: false,
-            data: xAxisData
-        }],
-        visualMap: {
-            show: false,
-            min: 0,
-            max: 50,
-            dimension: 0,
-            inRange: {
-                color: ['#4a657a', '#308e92', '#b1cfa5', '#f5d69f', '#f5898b', '#ef5055']
-            }
-        },
-        yAxis: {
-            axisLine: {
-                show: false
-            },
-            axisLabel: {
-                textStyle: {
-                    color: '#4a657a'
-                }
-            },
-            splitLine: {
-                show: true,
-                lineStyle: {
-                    color: '#08263f'
-                }
-            },
-            axisTick: {
-                show: false
-            }
-        },
-        series: [{
-            name: 'back',
-            type: 'bar',
-            data: data2,
-            z: 1,
-            itemStyle: {
-                normal: {
-                    opacity: 0.4,
-                    barBorderRadius: 5,
-                    shadowBlur: 3,
-                    shadowColor: '#111'
+    function rancolors(len) {
+        var color = [];
+        for (var i = 0; i <= len; i++) {
+            var sjys = bg2();
+            color.push(sjys);
+            for (var i = 0; i < color.length; i++) {
+                if ((color[i] = sjys)) {
+                    color[i] = bg2();
                 }
             }
-        }, {
-            name: 'Simulate Shadow',
-            type: 'line',
-            data: data,
-            z: 2,
-            showSymbol: false,
-            animationDelay: 0,
-            animationEasing: 'linear',
-            animationDuration: 1200,
-            lineStyle: {
-                normal: {
-                    color: 'transparent'
-                }
-            },
-            areaStyle: {
-                normal: {
-                    color: '#08263a',
-                    shadowBlur: 50,
-                    shadowColor: '#000'
-                }
-            }
-        }, {
-            name: 'front',
-            type: 'bar',
-            data: data,
-            xAxisIndex: 1,
-            z: 3,
-            itemStyle: {
-                normal: {
-                    barBorderRadius: 5
-                }
-            }
-        }],
-        animationEasing: 'elasticOut',
-        animationEasingUpdate: 'elasticOut',
-        animationDelay: function (idx) {
-            return idx * 20;
-        },
-        animationDelayUpdate: function (idx) {
-            return idx * 20;
         }
+        return color;
+    }
+    var data = [];
+    var color = rancolors(7);
+    for (var i = 0; i < scaleData.length; i++) {
+        data.push(
+            {
+                value: scaleData[i].value,
+                name: scaleData[i].name,
+                itemStyle: {
+                    normal: {
+                        borderWidth: 50,
+                        shadowBlur: 100,
+                        borderColor: color[i],
+                        // shadowColor: color[i],
+                    },
+                },
+            },
+            {
+                value: 50,
+                name: '',
+                itemStyle: placeHolderStyle,
+            }
+        );
+    }
+    var seriesObj = [
+        {
+            name: '',
+            type: 'pie',
+            clockWise: false,
+            radius: [40, 80],
+            hoverAnimation: false,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        color: '#ddd',
+                        formatter: function (params) {
+                            var percent = 0;
+                            var total = 0;
+                            for (var i = 0; i < scaleData.length; i++) {
+                                total += scaleData[i].value;
+                            }
+                            percent = ((params.value / total) * 100).toFixed(0);
+                            if (params.name !== '') {
+                                return params.name + '\n{white|' + '占比' + percent + '%}';
+                            } else {
+                                return '';
+                            }
+                        },
+                        rich: rich,
+                    },
+                    labelLine: {
+                        length: 10,
+                        length2: 10,
+                        show: true,
+                        color: '#00ffff',
+                    },
+                },
+            },
+            data: data,
+        },
+    ];
+    option = {
+        // backgroundColor: '#04243E',
+
+        tooltip: {
+            show: false,
+        },
+        legend: {
+            show: false,
+        },
+        toolbox: {
+            show: false,
+        },
+        series: seriesObj,
     };
+
+
     myChart.setOption(option);
     window.addEventListener("resize", function () {
         myChart.resize();
