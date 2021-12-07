@@ -981,7 +981,7 @@
                             }
                             percent = ((params.value / total) * 100).toFixed(0);
                             if (params.name !== '') {
-                                return params.name + '\n{white|' + '占比' + percent + '%}';
+                                return params.name + '\n{white|' + '' + percent + '%}';
                             } else {
                                 return '';
                             }
@@ -990,7 +990,7 @@
                     },
                     labelLine: {
                         length: 10,
-                        length2: 10,
+                        length2: 11,
                         show: true,
                         color: '#00ffff',
                     },
